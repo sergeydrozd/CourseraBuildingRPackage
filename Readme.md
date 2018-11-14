@@ -30,7 +30,7 @@ your package. This assessment will ask reviewers the following questions:
 [man/](https://github.com/sergeydrozd/CourseraBuildingRPackage/tree/master/man) with directory
 corresponding documentation files?
 * Does this package contain a 
-[vignette](https://github.com/sergeydrozd/CourseraBuildingRPackage/master/vignettes/CourseraBuildingRPackage.Rmd) 
+[vignette](https://github.com/sergeydrozd/CourseraBuildingRPackage/blob/master/vignettes/CourseraBuildingRPackage.Rmd) 
 which provides a meaningful description of the package and how it should be 
 used?
 * Does this package have at least one test included in the [tests/](https://github.com/sergeydrozd/CourseraBuildingRPackage/tree/master/tests/testthat) directory?
