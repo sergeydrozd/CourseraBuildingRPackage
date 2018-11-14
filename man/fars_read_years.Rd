@@ -2,16 +2,16 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_read_years}
 \alias{fars_read_years}
-\title{Read FARS years}
+\title{Read FARS YEARs}
 \usage{
 fars_read_years(years)
 }
 \arguments{
-\item{years}{A vector with a list of years}
+\item{YEARs}{A vector with a list of YEARs}
 }
 \value{
-A data.frame including entries in data by month, or NULL if the
- \code{year} is not valid
+A data.frame including entries in data by MONTH, or NULL if the
+ \code{YEAR} is not valid
 }
 \description{
 Ancillary function for \code{fars_summarize_years}

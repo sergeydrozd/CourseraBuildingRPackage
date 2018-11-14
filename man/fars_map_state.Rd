@@ -2,21 +2,21 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_map_state}
 \alias{fars_map_state}
-\title{Display accidents map by state and year}
+\title{Display accidents map by state and YEAR}
 \usage{
-fars_map_state(state.num, year)
+fars_map_state(state_num, YEAR)
 }
 \arguments{
-\item{state.num}{An Integer with the State Code}
+\item{state_num}{An Integer with the state Code}
 
-\item{year}{A string, or an integer, with the input \code{year}}
+\item{YEAR}{A string, or an integer, with the input \code{YEAR}}
 }
 \value{
 None
 }
 \description{
-Creates a plot with a state map including the accidents location by year
-If the \code{state.num} is invalid the function shows an error
+Creates a plot with a state map including the accidents location by YEAR
+If the \code{state_num} is invalid the function shows an error
 }
 \seealso{
 \link{fars_read}

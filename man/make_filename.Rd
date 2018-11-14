@@ -4,17 +4,17 @@
 \alias{make_filename}
 \title{Make data file name}
 \usage{
-make_filename(year)
+make_filename(YEAR)
 }
 \arguments{
-\item{year}{A string or an integer with the input \code{year}}
+\item{YEAR}{A string or an integer with the input \code{YEAR}}
 }
 \value{
 This function returns a string with the data file name for a given
-  year
+  YEAR
 }
 \description{
-Make .csv data file name related to the given \code{year}
+Make .csv data file name related to the given \code{YEAR}
 The function does not check if the file is available.
 }
 \examples{
