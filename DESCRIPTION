@@ -1,9 +1,9 @@
 Package: CourseraBuildingRPackage
 Title: Read Fatality Analysis Reporting System (FARS) data
-Version: 0.0.0.3
+Version: 0.0.0.1
 Authors@R: person("Siarhei", "Drozd", email = "sergey.n.drozd@gmail.com", role = c("aut", "cre"))
-Description: COURSERA: BUILDING R PACKAGES, Peer-graded Assignment.
-Depends: R (>= 3.3.3)
+Description: COURSERA: BUILDING R PACKAGES.
+Depends: R (>= 3.5.0)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
