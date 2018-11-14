@@ -4,9 +4,8 @@ Siarhei Drozd
 email: sergey.n.drozd@gmail.com   
 
 ## Build status
-[![Build Status](https://travis-ci.org/sergeydrozd/CourseraBuildingRPackage.svg?branch=master)]((https://travis-ci.org/sergeydrozd/CourseraBuildingRPackage) 
+[![Build Status](https://travis-ci.org/sergeydrozd/CourseraBuildingRPackage.svg?branch=master)](https://travis-ci.org/sergeydrozd/CourseraBuildingRPackage) 
 [![Build status](https://ci.appveyor.com/api/projects/status/lg2l2bhloaihol31/branch/master?svg=true)](https://ci.appveyor.com/project/sergeydrozd/courserabuildingrpackage/branch/master)
-
 
 ## Create an Example Package in R 
 
