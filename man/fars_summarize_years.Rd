@@ -2,18 +2,18 @@
 % Please edit documentation in R/fars_functions.R
 \name{fars_summarize_years}
 \alias{fars_summarize_years}
-\title{Summarize FARS data by YEARs}
+\title{Summarize FARS data by years}
 \usage{
 fars_summarize_years(years)
 }
 \arguments{
-\item{YEARs}{A vector with a list of YEARs to summarize by.}
+\item{years}{A vector with a list of years to summarize by.}
 }
 \value{
-A data.frame with number of accidents by YEARs summarized by MONTH
+A data.frame with number of accidents by years summarized by MONTH
 }
 \description{
-This function summarizes YEARly accidents data by MONTH
+This function summarizes yearly accidents data by MONTH
 }
 \examples{
 \dontrun{

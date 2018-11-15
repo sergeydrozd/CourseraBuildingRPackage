@@ -4,7 +4,7 @@
 #' This function reads data from .csv file, stored on disk, from the \strong{US
 #' National Highway Traffic Safety Administration's} \emph{Fatality Analysis
 #' Reporting System} (FARS), which is a nationwide census, providing the
-#' American public YEARly data, regarding fatal injuries suffered in motor
+#' American public yearly data, regarding fatal injuries suffered in motor
 #' vehicle traffic crashes.
 #' @importFrom readr read_csv
 #' @importFrom dplyr tbl_df
@@ -40,13 +40,13 @@ fars_read <- function(filename) {
 
 #' Make data file name
 #'
-#' Make .csv data file name related to the given \code{YEAR}
+#' Make .csv data file name related to the given \code{year}
 #' The function does not check if the file is available.
 #'
-#' @param YEAR A string or an integer with the input \code{YEAR}
+#' @param year A string or an integer with the input \code{year}
 #'
 #' @return This function returns a string with the data file name for a given
-#'   YEAR
+#'   year
 #'
 #' @examples
 #' make_filename(2013)
@@ -54,27 +54,27 @@ fars_read <- function(filename) {
 #' @seealso \link{fars_read}
 #' @export
 
-make_filename <- function(YEAR) {
-  YEAR <- as.integer(YEAR)
+make_filename <- function(year) {
+  year <- as.integer(year)
   system.file("extdata",
-              sprintf("accident_%d.csv.bz2", YEAR),
+              sprintf("accident_%d.csv.bz2", year),
               package = "CourseraBuildingRPackage",
               mustWork = TRUE)
 }
 
 
 
-#' Read FARS YEARs
+#' Read FARS years
 #'
 #' Ancillary function for \code{fars_summarize_years}
-#' @param YEARs A vector with a list of YEARs
+#' @param years A vector with a list of years
 #'
 #' @importFrom dplyr mutate_
 #' @importFrom dplyr select_
 #' @importFrom magrittr "%>%"
 #
 #' @return A data.frame including entries in data by MONTH, or NULL if the
-#'  \code{YEAR} is not valid
+#'  \code{year} is not valid
 #'
 #' @seealso \link{fars_read}
 #' @seealso \link{make_filename}
@@ -85,25 +85,25 @@ make_filename <- function(YEAR) {
 #' }
 #' @export
 fars_read_years <- function(years) {
-  lapply(years, function(YEAR) {
-    file <- make_filename(YEAR)
+  lapply(years, function(year) {
+    file <- make_filename(year)
     tryCatch({
       dat <- fars_read(file)
-      dplyr::mutate_(dat,  YEAR = "YEAR") %>%
+      dplyr::mutate_(dat,  year = "YEAR") %>%
         dplyr::select_("MONTH", "YEAR")
     }, error = function(e) {
-      warning("invalid YEAR: ", YEAR)
+      warning("invalid YEAR: ", year)
       return(NULL)
     })
   })
 }
 
-#' Summarize FARS data by YEARs
+#' Summarize FARS data by years
 #'
-#' This function summarizes YEARly accidents data by MONTH
-#' @param YEARs A vector with a list of YEARs to summarize by.
+#' This function summarizes yearly accidents data by MONTH
+#' @param years A vector with a list of years to summarize by.
 #'
-#' @return A data.frame with number of accidents by YEARs summarized by MONTH
+#' @return A data.frame with number of accidents by years summarized by MONTH
 #' @importFrom dplyr bind_rows
 #' @importFrom dplyr group_by_
 #' @importFrom dplyr summarize_
@@ -124,12 +124,12 @@ fars_summarize_years <- function(years) {
     tidyr::spread_("YEAR", "n")
 }
 
-#' Display accidents map by state and YEAR
+#' Display accidents map by state and year
 #'
-#' Creates a plot with a state map including the accidents location by YEAR
+#' Creates a plot with a state map including the accidents location by year
 #' If the \code{state_num} is invalid the function shows an error
 #' @param state_num An Integer with the state Code
-#' @param YEAR A string, or an integer, with the input \code{YEAR}
+#' @param year A string, or an integer, with the input \code{year}
 #'
 #' @importFrom maps map
 #' @importFrom dplyr filter_
@@ -138,8 +138,8 @@ fars_summarize_years <- function(years) {
 #' @seealso \link{fars_read}
 #' @seealso \link{make_filename}
 #' @export
-fars_map_state<- function(state_num, YEAR) {
-  filename <- make_filename(YEAR)
+fars_map_state<- function(state_num, year) {
+  filename <- make_filename(year)
   data <- fars_read(filename)
   state_num <- as.integer(state_num)
   if(!(state_num %in% unique(data$STATE))) {

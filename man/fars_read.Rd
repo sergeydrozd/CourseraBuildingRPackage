@@ -18,7 +18,7 @@ A data frame with data readed from the csv file, or an error if the
 This function reads data from .csv file, stored on disk, from the \strong{US
 National Highway Traffic Safety Administration's} \emph{Fatality Analysis
 Reporting System} (FARS), which is a nationwide census, providing the
-American public YEARly data, regarding fatal injuries suffered in motor
+American public yearly data, regarding fatal injuries suffered in motor
 vehicle traffic crashes.
 }
 \note{
